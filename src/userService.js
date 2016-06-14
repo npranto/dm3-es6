@@ -13,8 +13,28 @@ angular.module(`es6Day`)
 				return userData;
 			}
 		}
-
-
-
 // end of userService
 	});
+
+
+// Another way of doing the same task as above using classes
+class UserService{
+	constructor(){
+		this.userData = {};
+	}
+	createUser(username, email, password){
+		this.userData = {
+			email,
+			password,
+			username
+		}
+	}
+}
+
+angular.module(`es6Day`)
+	.service('userService', UserService);
+
+
+
+// end of userService		
+	})
